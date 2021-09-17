@@ -1,4 +1,4 @@
-![VMenu](vmenu.png)
+![VMenu](./assets/vmenu.png)
 # VMenu a Full-Featured Altv Menu UI made with Javascript by Florian L&auml;mmlein
 #### Creates an interactive webview based Menu.
 #### The VMenu System has over 51+ Items in the acctual stable version witch you can use.
