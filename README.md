@@ -1,7 +1,7 @@
 ![VMenu](./assets/vmenu.png)
 # VMenu a Full-Featured Altv Menu UI made with Javascript by Florian L&auml;mmlein
 #### Creates an interactive webview based Menu.
-#### The VMenu System has over 51+ Items in the acctual stable version witch you can use.
+#### The VMenu System has over 51+ Items in the current stable version witch you can use.
 &nbsp;
 &nbsp;
 ***
@@ -381,7 +381,7 @@
 | | `Numpad 4` | Change an Item Panel value (Left) |
 | | `Numpad 6` | Change an Item Panel value (Right) |
 | | `Enter` | Select an Item value trigger [`ItemSelect`](#Events) |
-| | `m` | Open Menu trigger [`MenuOpen`](#Events) if is open trigger [`MenuClose`](#Events) |
+| | `m`, `custom` | Open Menu trigger [`MenuOpen`](#Events) if is open trigger [`MenuClose`](#Events) |
 | | | |
 | [`PSubMenu`](#Items) | | |
 | | `Backspace` | Close Menu if is open |
@@ -402,7 +402,7 @@
 | | `ArrowLeft` | Change an Item value |
 | | `ArrowRight` | Change an Item value |
 | | `Enter` | Select an Item value trigger [`ItemSelect`](#Events) |
-| | `Escape` | Open Menu trigger [`MenuOpen`](#Events) if is open trigger [`MenuClose`](#Events) |
+| | `Escape`, `custom` | Open Menu trigger [`MenuOpen`](#Events) if is open trigger [`MenuClose`](#Events) |
 | | | |
 | [`GameUI`](#Items) | | |
 | | `ArrowUp` | Go an Item entry up trigger [`IndexChange`](#Events) |
@@ -824,7 +824,7 @@ MainPlayers.addItem(player_4);
 // 5. Setup an VMenu Details Tab.
 const MainDetails = new VMenu.GDetails("./css/test_2.jpg");
 MainDetails.addItem(new VMenu.GDetail("Rating", "3/5", "fas fa-star"));
-MainDetails.addItem(new VMenu.GDetail("Schwirigkeit", "20%"));
+MainDetails.addItem(new VMenu.GDetail("difficulty", "20%"));
 
 // 6. Add Tab to VMenu.
 MainMenu.addItem(MainSettings);
@@ -854,7 +854,7 @@ setTimeout(() => {
 &nbsp;
 ***
 ## Legacy versions
-This version of the VMenu are the acctual stable version which is supported for feature updates.
+This version of the VMenu are the current stable version which is supported for feature updates.
 
 ## Do you have any Ideas, Changes or Bugs ?
-Please let me know in the Comments, i will try to fix or add waht you found/want :D
+Please let me know in the Comments, i will try to fix or add what you found/want :D
