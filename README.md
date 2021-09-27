@@ -771,9 +771,9 @@ MainPlayers.addItem(new VMenu.GPlayer("Nik", VMenu.STATUS_LEAVE));
 MainPlayers.addItem(new VMenu.GPlayer("Alex", VMenu.STATUS_ENTER));
 
 // 5. Setup an VMenu Details Tab.
-const MainDetails = new VMenu.GDetails("./css/test_2.jpg");
+const MainDetails = new VMenu.GDetails("./assets/bg_2.jpg");
 MainDetails.addItem(new VMenu.GDetail("Rating", "3/5", "fas fa-star"));
-MainDetails.addItem(new VMenu.GDetail("Schwirigkeit", "20%"));
+MainDetails.addItem(new VMenu.GDetail("difficulty", "20%"));
 
 // 6. Add Tab to VMenu.
 MainMenu.addItem(MainSettings);
@@ -822,7 +822,7 @@ let player_4 = new VMenu.GPlayer("Alex", VMenu.STATUS_ENTER);
 MainPlayers.addItem(player_4);
 
 // 5. Setup an VMenu Details Tab.
-const MainDetails = new VMenu.GDetails("./css/test_2.jpg");
+const MainDetails = new VMenu.GDetails("./assets/bg_2.jpg");
 MainDetails.addItem(new VMenu.GDetail("Rating", "3/5", "fas fa-star"));
 MainDetails.addItem(new VMenu.GDetail("difficulty", "20%"));
 
