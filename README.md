@@ -40,8 +40,12 @@
 | | x | Menu X from top left corner | Int | 50 |
 | | y | Menu y from left corner | Int | 50 |
 | | width | Menu width (min: 300, max: 400) | Int | 340 |
-| | color | Menu custom color (hex, altv) | String | None |
+| | width_data | Menu width data (min: 25, max: 40) | Int | 30 |
+| | color | Menu custom color (hex, altv) | Array, String | [None] |
 | | max_items | Menu maximum items (max: 18, min: 1) | Int | 12 |
+| | Up_roll | Start on top if last item is skipt | bool | false |
+| | Down_roll | Start on bottom if first item is skipt | bool | false |
+| | banner | Menu Top banner style (1-25) | int | 0 |
 | `PSubMenu` | title | Menu title | String | None |
 | | desc | Menu description | String | None |
 | | viewTitle | Main Menu title | String | None |
@@ -69,7 +73,7 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Numbers | Int | 1 |
+| | max | Item maximum Numbers | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `PCheckBox` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
@@ -88,7 +92,7 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Slider range | Int | 1 |
+| | max | Item maximum Slider range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `PHeritageSlider` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
@@ -101,7 +105,7 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum PercentageBar range | Int | 1 |
+| | max | Item maximum Percentage range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `PImageItem` | src | Item src image to path | String | None |
 | `PImageView` | title | Item title | String | None |
@@ -136,21 +140,38 @@
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | Array,String | [None] |
 | | tag | Item tag for Eventhandling not displayed | Array, String | [None] |
 | | max | Item maximum Static range | Array, Int | [100] |
+| | max_line | Item maximum range Items | Array, Int | [5] |
 | `PColorPanel` | title | Item title | String | None |
 | | value | Item value (hex) | string | None |
 | | colors | Item colors list (hex) | Array, String | [None] |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| `PGridPanel` | title | Item title | String | None |
+| `PLiteGridPanel` | title | Item title | Array, String | None |
+| | value | Item value (min: 0, max: 8) | Int | None |
+| | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
+| | tag | Item tag for Eventhandling not displayed | String | None |
+| `PGridPanel` | title | Item title | Array, String | None |
 | | value | Item value (min: 0, max: 24) | Int | None |
+| | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
+| | tag | Item tag for Eventhandling not displayed | String | None |
+| `PPercentagePanel` | title | Item title | String | None |
+| | value | Item value (min: 0, max: `max`) | Int | None |
+| | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
+| | tag | Item tag for Eventhandling not displayed | String | None |
+| | max | Item maximum Percentage range | Int | 100 |
+| `PCirclePanel` | title | Item title | String | None |
+| | value | Item value (min: 0, max: 100) | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
 | | | | | |
 | `SettingsUI` | | | | |
 | | title | Menu title | String | None |
 | | font | Menu font style (Fantasy, Menus, ChaletLondon) | String | Fantasy |
-| | color | Menu custom color (hex, altv) | String | None |
+| | width_data | Menu width data (min: 25, max: 40) | Int | 30 |
+| | color | Menu custom color (hex, altv) | Array, String | [None] |
 | | max_items | Menu maximum items (max: 12, min: 1) | Int | 6 |
 | | max_tabs | Menu maximum tabs (max: 12, min: 1) | Int | 6 |
+| | Up_roll | Start on top if last item is skipt | bool | false |
+| | Down_roll | Start on bottom if first item is skipt | bool | false |
 | `STab` | title | Item title | String | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | `STabData` | title | Item title | String | None |
@@ -177,7 +198,7 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Numbers | Int | 1 |
+| | max | Item maximum Numbers | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `SCheckBox` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
@@ -196,14 +217,14 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Slider range | Int | 1 |
+| | max | Item maximum Slider range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `SPercentageBar` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum PercentageBar range | Int | 1 |
+| | max | Item maximum Percentage range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `SImageItem` | src | Item src image to path | String | None |
 | | | | | |
@@ -211,7 +232,10 @@
 | | title | Menu title | String | None |
 | | desc | Menu description | String | None |
 | | font | Menu font style (Fantasy, Menus, ChaletLondon) | String | Fantasy |
-| | color | Menu custom color (hex, altv) | String | None |
+| | width_data | Menu width data (min: 30, max: 50) | Int | 50 |
+| | color | Menu custom color (hex, altv) | Array, String | [None] |
+| | Up_roll | Start on top if last item is skipt | bool | false |
+| | Down_roll | Start on bottom if first item is skipt | bool | false |
 | `GSettings` | max_items | Menu maximum items (max: 10, min: 1) | Int | 5 |
 | `GPlayers` | min_items | Menu minimum items (min: 1) | Int | 1 |
 | | max_items | Menu maximum items (max: 20) | Int | 10 |
@@ -232,14 +256,13 @@
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
 | | items | Item value list | Array | [[], []] |
-| | imageItem | Item control for `SImageItem` | PImageItem | None |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `GNumberList` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Numbers | Int | 1 |
+| | max | Item maximum Numbers | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `GCheckBox` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
@@ -258,14 +281,14 @@
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum Slider range | Int | 1 |
+| | max | Item maximum Slider range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `GPercentageBar` | title | Item title | String | None |
 | | desc | Item description not displayed | String | None |
 | | value | Item value not displayed | Int | None |
 | | icon | Item icon from [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free) | String | None |
 | | tag | Item tag for Eventhandling not displayed | String | None |
-| | max | Item maximum PercentageBar range | Int | 1 |
+| | max | Item maximum Percentage range | Int | 100 |
 | | ...kwargs | Item Eventhandlers | String | None |
 | `GPlayer` | title | Item title | String | None |
 | | status | Player Status ([`STATUS_HOST`](#Constats), [`STATUS_ENTER`](#Constats), [`STATUS_LEAVE`](#Constats), [`STATUS_READY`](#Constats)) | String | [`STATUS_HOST`](#Constats) |
@@ -296,9 +319,36 @@
 | | desc | Message description not displayed | String | None |
 | | color | Message custom color (hex, altv) | String | None |
 | | timer | Message timer to dissaper (ms) | Int | 2000 |
-| `Color` | r | Color code (Red, hex) | String, Int | None |
+| `Color` | r | Color code (Red, hex {6}, altv) | Int, String | None |
 | | g | Color code (Green) | Int | 0 |
 | | b | Color code (Blue) | Int | 0 |
+| | a | Color code (Alpha) | Int | 1 |
+
+&nbsp;
+&nbsp;
+## All Functions in the VMenu System
+| <strong style="color: #6ba0ff;">Function</strong> | <strong style="color: #6ba0ff;">Description</strong> | <strong style="color: #6ba0ff;">Attribute</strong> | <strong style="color: #6ba0ff;">Description</strong> | <strong style="color: #6ba0ff;">Type</strong> | <strong style="color: #6ba0ff;">Default value</strong> |
+| --- | --- | --- | --- | --- | --- |
+| [`PlayerUI`](#Items) | | | | | |
+| `Start` | Setup the Menu start the [`Events`](#Events) listener | open_key | Setup the Menu open key | Int | 77 |
+| `Open` | Open the Menu | | | | |
+| `Close` | Close the Menu | | | | |
+| `Clear` | Clear the Menu and delete the [`Events`](#Events) listener | | | | |
+| `addItem` | Add an [`Item`](#Items) the Menu | | | | |
+| | | | | | |
+| [`SettingsUI`](#Items) | | | | | |
+| `Start` | Setup the Menu start the [`Events`](#Events) listener | open_key | Setup the Menu open key | Int | 77 |
+| `Open` | Open the Menu | | | | |
+| `Close` | Close the Menu | | | | |
+| `Clear` | Clear the Menu and delete the [`Events`](#Events) listener | | | | |
+| `addItem` | Add an [`Item`](#Items) the Menu | | | | |
+| | | | | | |
+| [`GameUI`](#Items) | | | | | |
+| `Start` | Setup the Menu start the [`Events`](#Events) listener | open_key | Setup the Menu open key | Int | 77 |
+| `Open` | Open the Menu | | | | |
+| `Close` | Close the Menu | | | | |
+| `Clear` | Clear the Menu and delete the [`Events`](#Events) listener | | | | |
+| `addItem` | Add an [`Item`](#Items) the Menu | | | | |
 
 &nbsp;
 &nbsp;
@@ -353,18 +403,24 @@
 ## All <a id="Constats">Constats</a> in the VMenu System set into `...kwargs`
 | <strong style="color: #6ba0ff;">Constant</strong> | <strong style="color: #6ba0ff;">Description</strong> |
 | --- | --- |
-| `DESC_CHECK` | On [`ItemSelect`](#Events) return Item description |
-| `DISABLED` | Set Item status disabled |
 | `AUTO_SELECT` | On [`IndexChange`](#Events) trigger [`ItemSelect`](#Events) |
+| `DESC_CHECK` | On [`ItemSelect`](#Events) return Item description |
 | `ONLY_VALUE` | On [`ItemSelect`](#Events) return only Item value |
 | `ONLY_TEXT` | On [`ItemSelect`](#Events) return only Item title, description if [`DESC_CHECK`](#Constats) not set |
 | `ONLY_TAG` | On [`ItemSelect`](#Events) return only Item tag |
 | `READ_ONLY` | Item value is not editable by [`ArrowLeft`](#Controls) or [`ArrowRight`](#Controls) |
+| `DISABLED` | Set Item status disabled |
+| | |
+| `PICK_ALPHA` | [`PlayerUI`](#Items) Item [`PColorPicker`](#Items) get/set alpha value |
+| `PANEL_UPDATE` | [`PlayerUI`](#Items) set Panel Update status |
 | | |
 | `STATUS_HOST` | [`GameUI`](#Items) Item [`GPlayer`](#Items) attribute `status` value |
 | `STATUS_ENTER` | [`GameUI`](#Items) Item [`GPlayer`](#Items) attribute `status` value |
 | `STATUS_LEAVE` | [`GameUI`](#Items) Item [`GPlayer`](#Items) attribute `status` value |
 | `STATUS_READY` | [`GameUI`](#Items) Item [`GPlayer`](#Items) attribute `status` value |
+| | |
+| `DISABLE_OPEN` | Disbale the Open function on any Menu |
+| `DISABLE_CLOSE` | Disbale the Close function on any Menu |
 
 &nbsp;
 &nbsp;
@@ -374,12 +430,10 @@
 | [`PlayerUI`](#Items) | | |
 | | `ArrowUp` | Go an Item entry up trigger [`IndexChange`](#Events) |
 | | `ArrowDown` | Go an Item entry down trigger [`IndexChange`](#Events) |
-| | `ArrowLeft` | Change an Item value |
-| | `ArrowRight` | Change an Item value |
-| | `Numpad 8` | Change an Item Panel value (Up) |
-| | `Numpad 5` | Change an Item Panel value (Down) |
-| | `Numpad 4` | Change an Item Panel value (Left) |
-| | `Numpad 6` | Change an Item Panel value (Right) |
+| | `ArrowLeft` | Change an Item/Panel value |
+| | `ArrowRight` | Change an Item/Panel value |
+| | `Numpad 8` | Change an Item Panel index (active Panel) (Up) |
+| | `Numpad 5` | Change an Item Panel index (active Panel) (Down) |
 | | `Enter` | Select an Item value trigger [`ItemSelect`](#Events) |
 | | `m`, `custom` | Open Menu trigger [`MenuOpen`](#Events) if is open trigger [`MenuClose`](#Events) |
 | | | |
@@ -387,12 +441,10 @@
 | | `Backspace` | Close Menu if is open |
 | | `ArrowUp` | Go an Item entry up trigger [`IndexChange`](#Events) |
 | | `ArrowDown` | Go an Item entry down trigger [`IndexChange`](#Events) |
-| | `ArrowLeft` | Change an Item value |
-| | `ArrowRight` | Change an Item value |
-| | `Numpad 8` | Change an Item Panel value (Up) |
-| | `Numpad 5` | Change an Item Panel value (Down) |
-| | `Numpad 4` | Change an Item Panel value (Left) |
-| | `Numpad 6` | Change an Item Panel value (Right) |
+| | `ArrowLeft` | Change an Item/Panel value |
+| | `ArrowRight` | Change an Item/Panel value |
+| | `Numpad 8` | Change an Item Panel index (active Panel) (Up) |
+| | `Numpad 5` | Change an Item Panel index (active Panel) (Down) |
 | | `Enter` | Select an Item value trigger [`ItemSelect`](#Events) |
 | | | |
 | [`SettingsUI`](#Items) | | |
@@ -420,7 +472,7 @@
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, "{#fa8f32}");
+const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, 30, "{#fa8f32}");
 
 MainMenu.addItem(new VMenu.PSeperator("Vehicles"));
 MainMenu.addItem(new VMenu.PSlider("Slider", "~b~Slider ~w~example ~r~with ~g~color~y~", 0, "", "", 20, VMenu.DISABLED));
@@ -442,7 +494,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, "{#fa8f32}");
+const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, 30, "{#fa8f32}");
 
 MainMenu.addItem(new VMenu.PSeperator("Vehicles"));
 MainMenu.addItem(new VMenu.PSlider("Slider", "~b~Slider ~w~example ~r~with ~g~color~y~", 0, "", "", 20, VMenu.DISABLED));
@@ -468,7 +520,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, "{#fa8f32}");
+const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, 30, "{#fa8f32}");
 
 MainMenu.addItem(new VMenu.PSeperator("Vehicles"));
 MainMenu.addItem(new VMenu.PSlider("Slider", "~b~Slider ~w~example ~r~with ~g~color~y~", 0, "", "", 20, VMenu.DISABLED));
@@ -500,7 +552,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, "{#fa8f32}");
+const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, 30, "{#fa8f32}");
 
 const list = new VMenu.PItemList("List", "List example", 0, "", "", [[10, 20, 30], ["Item 2 Large Text example", "item 2", "item 3"]]);
 MainMenu.addItem(list);
@@ -544,7 +596,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, "{#fa8f32}");
+const MainMenu = new VMenu.PlayerUI("VMenu", "Menu Example", "", "right", 50, 50, 340, 30, "{#fa8f32}");
 
 const list = new VMenu.PItemList("List", "List example", 0, "", "", [[10, 20, 30], ["Item 2 Large Text example", "item 2", "item 3"]]);
 MainMenu.addItem(list);
@@ -616,7 +668,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.SettingsUI("Settings UI", "", "{#fa8f32}");
+const MainMenu = new VMenu.SettingsUI("Settings UI", "", 30, "{#fa8f32}");
 
 // 3. Setup an VMenu Tab.
 const tab_1 = new VMenu.STab("Tab 1");
@@ -648,7 +700,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.SettingsUI("Settings UI", "", "{#fa8f32}");
+const MainMenu = new VMenu.SettingsUI("Settings UI", "", 30, "{#fa8f32}");
 
 // 3. Setup an VMenu Tab.
 const tab_1 = new VMenu.STab("Tab 1");
@@ -692,7 +744,7 @@ MainMenu.ItemSelect.on((e) => {
 import * as VMenu from './js/VMenu.js';
 
 // 2. Setup an VMenu.
-const MainMenu = new VMenu.SettingsUI("Settings UI", "", "{#fa8f32}");
+const MainMenu = new VMenu.SettingsUI("Settings UI", "", 30, "{#fa8f32}");
 
 // 3. Setup an VMenu Tab.
 const tab_1 = new VMenu.STab("Tab 1");
